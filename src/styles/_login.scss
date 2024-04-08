@@ -1,0 +1,62 @@
+@import './variables';
+
+.login-page {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 400px;
+    margin: 0 auto;
+
+    h2 {
+        color: $text-color;
+        font-weight: $font-weight-bold;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+
+        label {
+            color: $text-color;
+            font-weight: $font-weight-normal;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        input {
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            border: 1px solid $secondary-color;
+            background-color: $secondary-color;
+            color: $text-color;
+            font-weight: $font-weight-normal;
+            transition: all 0.3s ease;
+            width: 100%;
+
+            &:focus {
+                outline: none;
+                border-color: $primary-color;
+                box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25);
+            }
+        }
+    }
+
+    button {
+        background-color: $primary-color;
+        border: none;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        font-weight: $font-weight-normal;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: block;
+        margin: 0 auto;
+
+        &:hover {
+            background-color: darken($primary-color, 10%);
+        }
+    }
+}
