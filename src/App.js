@@ -18,6 +18,7 @@ import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 import NewFaculty from "./pages/newFaculty/NewFaculty";
 import NewAlumni from "./pages/newAlumni/NewAlumni";
+import { CookiesProvider } from "react-cookie";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -39,9 +40,11 @@ function App() {
           <Route
             path="/"
             element={
+              <CookiesProvider>
               <ProtectedRoute>
                 <Home />
               </ProtectedRoute>
+              </CookiesProvider>
             }
           />
           <Route

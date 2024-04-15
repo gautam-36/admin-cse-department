@@ -14,13 +14,24 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import { Link } from "react-router-dom";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
+import axios from "axios";
 
 const Sidebar = () => {
 
   const { dispatch } = useContext(DarkModeContext);
-  const handleLogout = () => {
-    localStorage.removeItem('isAuthenticated');
-    window.location.reload();
+  const handleLogout = async() => {
+    try{
+       console.log("clicked")
+      const res=await axios.get("http://localhost:5000/api/admin/logout",{
+        withCredentials:true
+      });
+      console.log(res)
+      sessionStorage.removeItem('data');
+      window.location.reload();
+    }
+    catch(err){
+      console.error(err)
+    }
   };
 
   
