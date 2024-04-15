@@ -1,32 +1,49 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-
+import { json, useNavigate } from 'react-router-dom';
+import axios from "axios"
 const Login = () => {
-  const [username, setUsername] = useState('');
+  const [email, setemail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    console.log("handle login is working right")
-    // Simulate authentication
-    if (username === 'admin' && password === 'password') {
-      localStorage.setItem('isAuthenticated', 'true');
-      navigate('/');
-    } else {
-      alert('Invalid username or password');
+  const handleLogin = async() => {
+    try{
+      console.log("handle login is working right")
+      // Simulate authentication
+  const res=await axios.post("http://localhost:5000/api/admin/login",{email,password},{
+    withCredentials:true
+  })
+      console.log(res)
+      
+      console.log()
+    
+
+      
+  
+      if (res.data.sucess) {
+        sessionStorage.setItem('data', JSON.stringify(res?.data?.AcessTOken));
+        
+        navigate('/');
+      } else {
+        alert('Invalid email or password');
+      }
     }
+    catch(err){
+      console.error(err)
+    }
+   
   };
 
   return (
     <div className="login-page">
       <h2>Login</h2>
       <div className="form-group">
-        <label htmlFor="username">Username:</label>
+        <label htmlFor="email">email:</label>
         <input
           type="text"
-          id="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          id="email"
+          value={email}
+          onChange={(e) => setemail(e.target.value)}
         />
       </div>
       <div className="form-group">
@@ -80,7 +97,7 @@ export default Login;
 
 // const Login = () => {
 //   const [credentials, setCredentials] = useState({
-//     username: undefined,
+//     email: undefined,
 //     password: undefined,
 //   });
 
@@ -117,8 +134,8 @@ export default Login;
 //       <div className="lContainer">
 //         <input
 //           type="text"
-//           placeholder="username"
-//           id="username"
+//           placeholder="email"
+//           id="email"
 //           onChange={handleChange}
 //           className="lInput"
 //         />

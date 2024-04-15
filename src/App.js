@@ -42,7 +42,7 @@ function App() {
             element={
               <ProtectedRoute>
                 <Home />
-              </ProtectedRoute>
+              </ProtectedRoute> 
             }
           />
           <Route
