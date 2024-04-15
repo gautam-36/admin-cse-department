@@ -8,6 +8,7 @@ import "./newAlumni.scss"
 
 const NewAlumni = () => {
     const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
     const [batchYear, setBatchYear] = useState('');
     const [stream, setStream] = useState('');
     const [classs, setClasss] = useState('');
@@ -41,6 +42,7 @@ const NewAlumni = () => {
             // Create a new alumni object with the uploaded image URL
             const newAlumni = {
                 name,
+                email,
                 batchYear,
                 classs,
                 stream,
@@ -58,6 +60,7 @@ const NewAlumni = () => {
 
             // Reset the form fields
             setName('');
+            setEmail('');
             setRoll('');
             setBatchYear('');
             setProfileImage(null);
@@ -95,6 +98,16 @@ const NewAlumni = () => {
                             />
                         </div>
                         <div className="form-group">
+                            <label htmlFor="email">Email:</label>
+                            <input
+                                type="email"
+                                id="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="form-group">
                             <label htmlFor="roll">Roll Number:</label>
                             <input
                                 type="text"
@@ -115,7 +128,7 @@ const NewAlumni = () => {
                             />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="classs">Stream:</label>
+                            <label htmlFor="classs">Class:</label>
                             <select
                                 id="classs"
                                 value={classs}

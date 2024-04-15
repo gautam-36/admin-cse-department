@@ -18,6 +18,7 @@ import NotFound from "./pages/NotFound";
 import ProtectedRoute from "./components/ProtectedRoute";
 import NewFaculty from "./pages/newFaculty/NewFaculty";
 import NewAlumni from "./pages/newAlumni/NewAlumni";
+import Register from "./pages/register/Register";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -49,6 +50,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <Faculty />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/create-admin"
+            element={
+              <ProtectedRoute>
+                <Register />
               </ProtectedRoute>
             }
           />
