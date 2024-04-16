@@ -20,22 +20,22 @@ import { Language } from "@mui/icons-material";
 const Sidebar = () => {
 
   const { dispatch } = useContext(DarkModeContext);
-  const handleLogout = async() => {
-    try{
-       console.log("clicked")
-      const res=await axios.get("http://localhost:5000/api/admin/logout",{
-        withCredentials:true
+  const handleLogout = async () => {
+    try {
+      console.log("clicked")
+      const res = await axios.get("http://localhost:5000/api/admin/logout", {
+        withCredentials: true
       });
       console.log(res)
       sessionStorage.removeItem('data');
       window.location.reload();
     }
-    catch(err){
+    catch (err) {
       console.error(err)
     }
   };
 
-  
+
 
   return (
     <div className="sidebar">
@@ -101,19 +101,19 @@ const Sidebar = () => {
           </li> */}
           <p className="title">USER</p>
           <Link to="/admin" style={{ textDecoration: "none" }}>
-          <li>
-            <AccountCircleOutlinedIcon className="icon" />
-            <span>Admin</span>
-          </li>
+            <li>
+              <AccountCircleOutlinedIcon className="icon" />
+              <span>Admin</span>
+            </li>
           </Link>
           <li>
             <ExitToAppIcon className="icon" />
             <span onClick={handleLogout}>Logout</span>
           </li>
           <li>
-            <a href="http://localhost:3001/" target="_blank" style={{textDecoration:'none'}}>
-            <Language className="icon" />
-            <span>Go to main website</span>
+            <a href="http://localhost:3001/" target="_blank" style={{ textDecoration: 'none' }}>
+              <Language className="icon" />
+              <span>Go to main website</span>
             </a>
           </li>
         </ul>
