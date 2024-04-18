@@ -12,6 +12,7 @@ const NewFaculty = () => {
     const [joinYear, setJoinYear] = useState('');
     const [qualification, setQualification] = useState('');
     const [designation, setDesignation] = useState('');
+    const [facultyType, setFacultyType] = useState('');
     const [confrence, setConfrence] = useState('');
     // const [portfolio, setPortfolio] = useState('');
     const [teaching, setTeaching] = useState('');
@@ -46,13 +47,13 @@ const NewFaculty = () => {
             const imageUrl = uploadResponse.data.imageUrl
             console.log(imageUrl);
 
-            // upload bioData pdf 
-            const formDataa = new FormData();
-            formDataa.append('image', bioDatas);
-            const uploadBioData = await axios.post('http://localhost:5000/api/upload', formDataa, {
+            // // upload bioData pdf 
+            // const formDataa = new FormData();
+            // formDataa.append('image', bioDatas);
+            // const uploadBioData = await axios.post('http://localhost:5000/api/upload', formDataa, {
 
-            })
-            const bioDataUrl = uploadBioData.data.imageUrl
+            // })
+            // const bioDataUrl = uploadBioData.data.imageUrl
 
 
 
@@ -68,10 +69,11 @@ const NewFaculty = () => {
                 national,
                 international,
                 designation,
+                facultyType,
                 qualification,
                 expertise,
                 image: imageUrl,
-                bioData: bioDataUrl,
+                // bioData: bioDataUrl,
 
             };
 
@@ -90,6 +92,7 @@ const NewFaculty = () => {
             setJoinYear('');
             setQualification('');
             setDesignation('');
+            setFacultyType('');
             setConfrence('');
             setExpertise('');
             setTeaching('');
@@ -191,6 +194,19 @@ const NewFaculty = () => {
                                 <option value="Dean">Dean</option>
                             </select>
                         </div>
+                        <div className="form-group">
+                            <label htmlFor="facultyType">Faculty Type:</label>
+                            <select
+                                id="facultyType"
+                                value={facultyType}
+                                onChange={(e) => setFacultyType(e.target.value)}
+                            >
+                                <option value="">Select </option>
+                                <option value="Permanent">Permanent</option>
+                                <option value="Contractual">Contractual</option>
+                               
+                            </select>
+                        </div>
 
                         <div className="form-group">
                             <label htmlFor="teaching">Years of Experience in Teaching:</label>
@@ -262,7 +278,7 @@ const NewFaculty = () => {
                                 onChange={handleImageUpload}
                             />
                         </div>
-                        <div className="form-group">
+                        {/* <div className="form-group">
                             <label htmlFor="bioData" className='file-input-label'>Upload Brief Bio Data:</label>
                             <input
                                 type="file"
@@ -270,7 +286,7 @@ const NewFaculty = () => {
                                 accept=".pdf"
                                 onChange={handleBioDataUpload}
                             />
-                        </div>
+                        </div> */}
 
                         <button onClick={handleSubmit} type="submit">Add Faculty</button>
                     </form>
