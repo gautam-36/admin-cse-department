@@ -19,6 +19,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import NewFaculty from "./pages/newFaculty/NewFaculty";
 import NewAlumni from "./pages/newAlumni/NewAlumni";
 import Register from "./pages/register/Register";
+import AddNotice from "./pages/addNotices/AddNotice";
+import Notice from "./pages/notice/Notice";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -42,7 +44,7 @@ function App() {
             element={
               <ProtectedRoute>
                 <Home />
-              </ProtectedRoute> 
+              </ProtectedRoute>
             }
           />
           <Route
@@ -90,6 +92,22 @@ function App() {
             element={
               <ProtectedRoute>
                 <NewAlumni />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/notice"
+            element={
+              <ProtectedRoute>
+                <Notice />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/notice/newNotice"
+            element={
+              <ProtectedRoute>
+                <AddNotice />
               </ProtectedRoute>
             }
           />

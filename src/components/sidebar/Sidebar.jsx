@@ -67,6 +67,18 @@ const Sidebar = () => {
               <span>Alumni</span>
             </li>
           </Link>
+          <Link to="/create-admin" style={{ textDecoration: "none" }}>
+            <li>
+              <StoreIcon className="icon" />
+              <span>create admin</span>
+            </li>
+          </Link>
+          <Link to="/notice" style={{ textDecoration: "none" }}>
+            <li>
+              <StoreIcon className="icon" />
+              <span>Notice</span>
+            </li>
+          </Link>
           {/* <Link to="/rooms" style={{ textDecoration: "none" }}>
             <li>
               <CreditCardIcon className="icon" />
