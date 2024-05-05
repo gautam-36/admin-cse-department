@@ -21,6 +21,16 @@ import NewAlumni from "./pages/newAlumni/NewAlumni";
 import Register from "./pages/register/Register";
 import AddNotice from "./pages/addNotices/AddNotice";
 import Notice from "./pages/notice/Notice";
+import News from "./pages/news/News";
+import AddNews from "./pages/add News/AddNews";
+import Announcement from "./pages/announcement/Announcement";
+import AddAnnouncement from "./pages/add Announcement/AddAnnouncement";
+import Publication from "./pages/publication/Publication";
+import AddPublication from "./pages/add Publications/AddPublication";
+import AddEvents from "./pages/add events/AddEvents";
+import Event from "./pages/Events/Event";
+import Syllabus from "./pages/syllabus/Syllabus";
+import AddSyllabus from "./pages/add Syllabus/AddSyllabus";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -92,6 +102,102 @@ function App() {
             element={
               <ProtectedRoute>
                 <NewAlumni />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/news"
+            element={
+              <ProtectedRoute>
+                <News />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/news/newNews"
+            element={
+              <ProtectedRoute>
+                <AddNews />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/events"
+            element={
+              <ProtectedRoute>
+                <Event />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/events/newEvents"
+            element={
+              <ProtectedRoute>
+                <AddEvents />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/dates"
+            element={
+              <ProtectedRoute>
+                <Notice />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/dates/newDate"
+            element={
+              <ProtectedRoute>
+                <AddNotice />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/announcement"
+            element={
+              <ProtectedRoute>
+                <Announcement />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/announcement/newAnnouncement"
+            element={
+              <ProtectedRoute>
+                <AddAnnouncement />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/publication"
+            element={
+              <ProtectedRoute>
+                <Publication/>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/publication/newPublication"
+            element={
+              <ProtectedRoute>
+                <AddPublication />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/syllabus"
+            element={
+              <ProtectedRoute>
+                <Syllabus />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/syllabus/newSyllabus"
+            element={
+              <ProtectedRoute>
+                <AddSyllabus />
               </ProtectedRoute>
             }
           />

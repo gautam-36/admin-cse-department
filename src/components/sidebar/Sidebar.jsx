@@ -73,6 +73,42 @@ const Sidebar = () => {
               <span>create admin</span>
             </li>
           </Link>
+          <Link to="/announcement" style={{ textDecoration: "none" }}>
+            <li>
+              <StoreIcon className="icon" />
+              <span>Announcement</span>
+            </li>
+          </Link>
+          <Link to="/dates" style={{ textDecoration: "none" }}>
+            <li>
+              <StoreIcon className="icon" />
+              <span>Important Dates</span>
+            </li>
+          </Link>
+          <Link to="/news" style={{ textDecoration: "none" }}>
+            <li>
+              <StoreIcon className="icon" />
+              <span>News</span>
+            </li>
+          </Link>
+          <Link to="/events" style={{ textDecoration: "none" }}>
+            <li>
+              <StoreIcon className="icon" />
+              <span>Events/Seminar</span>
+            </li>
+          </Link>
+          <Link to="/publication" style={{ textDecoration: "none" }}>
+            <li>
+              <StoreIcon className="icon" />
+              <span>Publications</span>
+            </li>
+          </Link>
+          <Link to="/syllabus" style={{ textDecoration: "none" }}>
+            <li>
+              <StoreIcon className="icon" />
+              <span>Syllabus</span>
+            </li>
+          </Link>
           <Link to="/notice" style={{ textDecoration: "none" }}>
             <li>
               <StoreIcon className="icon" />
